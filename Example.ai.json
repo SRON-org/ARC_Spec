@@ -1,0 +1,23 @@
+{   "$schema": "https://json-schema.org/draft-07/schema#",
+    "FriendlyName": "Example",
+    "Introduction": "CloseAISB",
+    "ResponseType": "OpenAI",
+    "BaseURL": "https://api.openai.com/v1",
+    "APIKey": "sk-",
+    "Model": "gpt-3.5-turbo",
+    "Temperature": 0.5,
+    "MaxTokens": 1000,
+    "TopP": 1,
+    "TopK": 1,
+    "other": {
+        "presence_penalty": 0,
+        "frequency_penalty": 0,
+        "stop": "\n",
+        "stream": true
+
+    },
+    "Extra_Body":{},
+    "Personality":""
+
+
+}
