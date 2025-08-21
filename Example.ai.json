@@ -12,7 +12,6 @@
     "other": {
         "presence_penalty": 0,
         "frequency_penalty": 0,
-        "stop": "\n",
         "stream": true
 
     },

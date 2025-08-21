@@ -11,7 +11,9 @@ ARC_Spec配置文件是一个JSON格式的文件，用于定义AI模型的连接
 一个标准的ARC_Spec配置文件包含以下主要部分：
 
 ```json
-{
+{   
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "ARC_Version": "0.0.1",
     "FriendlyName": "配置名称",
     "Introduction": "配置描述",
     "ResponseType": "响应类型",
@@ -25,7 +27,6 @@ ARC_Spec配置文件是一个JSON格式的文件，用于定义AI模型的连接
     "other": {
         "presence_penalty": 0,
         "frequency_penalty": 0,
-        "stop": "\n",
         "stream": true
     },
     "Extra_Body": {},
@@ -37,12 +38,15 @@ ARC_Spec配置文件是一个JSON格式的文件，用于定义AI模型的连接
 
 ### 基础配置字段
 
+#### `ARC_Version` (字符串，必须)
+- **描述**: ARC_Spec配置文件版本号
+
 #### `FriendlyName` (字符串，必需)
 - **描述**: 配置文件的友好名称，用于在界面中显示
 - **示例**: `"GPT-4 Chat"`、`"Claude Assistant"`
 - **注意**: 建议使用简洁明了的名称
 
-#### `Introduction` (字符串，可选)
+#### `Introduction` (字符串，必须)
 - **描述**: 配置文件的简短介绍或描述
 - **示例**: `"基于GPT-4的智能对话助手"`
 - **用途**: 帮助用户理解此配置的用途
@@ -83,9 +87,9 @@ ARC_Spec配置文件是一个JSON格式的文件，用于定义AI模型的连接
   - Claude: `"claude-3-opus"`, `"claude-3-sonnet"`
 - **示例**: `"gpt-4"`
 
-#### `Temperature` (数字，0-2)
+#### `Temperature` (数字，0-1)
 - **描述**: 控制模型响应的随机性和创造性
-- **取值范围**: 0.0 - 2.0
+- **取值范围**: 0.0 - 1.0
 - **建议值**:
   - `0.0-0.3`: 更确定性的回答，适合事实性问题
   - `0.4-0.7`: 平衡的创造性，适合一般对话
