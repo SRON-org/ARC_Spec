@@ -2,6 +2,7 @@
     "FriendlyName": "Example",
     "Introduction": "CloseAISB",
     "ResponseType": "OpenAI",
+    "it_multimodal_model":"False",
     "BaseURL": "https://api.openai.com/v1",
     "APIKey": "sk-",
     "Model": "gpt-3.5-turbo",
@@ -16,7 +17,8 @@
 
     },
     "Extra_Body":{},
-    "Personality":""
+    "Personality":"",
+    "if_return_none":"哇，这个模型啥也没回复！"
 
 
 }
