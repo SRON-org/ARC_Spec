@@ -1,0 +1,106 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "ARC_Spec Configuration",
+    "description": "Schema for ARC_Spec configuration files",
+    "type": "object",
+    "properties": {
+        "ARC_Version": {
+            "type": "string",
+            "description": "The version of the ARC_Spec configuration file."
+        },
+        "FriendlyName": {
+            "type": "string",
+            "description": "A user-friendly name for the configuration."
+        },
+        "Introduction": {
+            "type": "string",
+            "description": "A brief introduction or description of the configuration."
+        },
+        "ResponseType": {
+            "type": "string",
+            "description": "The expected response format from the API.",
+            "enum": ["OpenAI", "Claude", "Gemini"]
+        },
+        "BaseURL": {
+            "type": "string",
+            "description": "The base URL of the API service.",
+            "format": "uri"
+        },
+        "APIKey": {
+            "type": "string",
+            "description": "The API key for accessing the service."
+        },
+        "Model": {
+            "type": "string",
+            "description": "The name of the AI model to be used."
+        },
+        "Temperature": {
+            "type": "number",
+            "description": "Controls the randomness of the model's output.",
+            "minimum": 0,
+            "maximum": 1
+        },
+        "MaxTokens": {
+            "type": "integer",
+            "description": "The maximum number of tokens in the model's response.",
+            "minimum": 1
+        },
+        "TopP": {
+            "type": "number",
+            "description": "Controls the diversity of the vocabulary.",
+            "minimum": 0,
+            "maximum": 1
+        },
+        "TopK": {
+            "type": "integer",
+            "description": "Limits the number of candidate words at each step.",
+            "minimum": 1
+        },
+        "other": {
+            "type": "object",
+            "description": "Other advanced parameters.",
+            "properties": {
+                "presence_penalty": {
+                    "type": "number",
+                    "description": "Penalizes new topics.",
+                    "minimum": -2,
+                    "maximum": 2
+                },
+                "frequency_penalty": {
+                    "type": "number",
+                    "description": "Penalizes word repetition.",
+                    "minimum": -2,
+                    "maximum": 2
+                },
+                "stop": {
+                    "type": ["string", "array"],
+                    "description": "A sequence where the API will stop generating further tokens."
+                },
+                "stream": {
+                    "type": "boolean",
+                    "description": "Whether to enable streaming responses."
+                }
+            }
+        },
+        "Extra_Body": {
+            "type": "object",
+            "description": "Any extra parameters to be sent in the request body."
+        },
+        "Personality": {
+            "type": "string",
+            "description": "Defines the personality and behavior of the AI assistant."
+        },
+        "if_return_none": {
+            "type": "string",
+            "description": "The message to display when the model returns no content."
+        }
+    },
+    "required": [
+        "FriendlyName",
+        "Introduction",
+        "ResponseType",
+        "BaseURL",
+        "APIKey",
+        "Model"
+    ]
+}
