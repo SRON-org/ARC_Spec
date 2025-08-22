@@ -28,7 +28,6 @@ ARC_Spec 是一个由 SRON 团队研发的统一API配置解决方案，通过�
 ## 生态
 
 - **ARC_Spec_Python**：在 Python 上提供对使用 ARC_Spec 规范 格式的文件的进行解析。
-- **API 市场**：壁纸生成器 NEXT 的 API 图片源市场
 
 ## 代码补全
 
